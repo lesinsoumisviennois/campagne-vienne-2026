@@ -137,8 +137,8 @@ section {
     overflow: hidden; /* Sécurité pour les animations */
 }
 
-section:nth-child(even) {
-    background-color: #f0f0f5; /* Légère alternance de couleur */
+section:nth-child(odd) {
+    background-color: #f0f0f5; /* Légère alternance de couleur pour les sections 2, 4, 6... */
 }
 
 /* ======================================================================
@@ -196,7 +196,6 @@ section:nth-child(even) {
  * ====================================================================== */
 
 #hero {
-    /* Espace prévu pour le header fixe */
     padding-top: 80px; 
     min-height: 80vh; 
     display: flex;
@@ -213,7 +212,7 @@ section:nth-child(even) {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('images/banniere.jpg'); /* Placeholder image */
+    background-image: url('images/banniere.jpg'); /* Image de fond */
     background-size: cover;
     background-position: center;
     filter: brightness(0.4); /* Assombrissement pour lisibilité */
@@ -235,71 +234,7 @@ section:nth-child(even) {
 }
 
 /* ======================================================================
- * 8. SECTION ÉQUIPE/CHEFS DE FILE
- * ====================================================================== */
-
-#equipe {
-    background-color: #f0f0f5; /* Couleur de fond légèrement différente pour la séparation */
-    padding: 3rem 0;
-}
-
-.team-grid {
-    display: grid;
-    /* La grille sera en deux colonnes si l'espace le permet */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 2rem;
-    margin-top: 2rem;
-    text-align: center;
-}
-
-.team-member {
-    padding: 1.5rem;
-    border-radius: 10px;
-    background-color: white;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease;
-}
-
-.team-member:hover {
-    transform: translateY(-3px);
-}
-
-.member-photo {
-    /* L'image est maintenant rectangulaire ou carrée */
-    width: 100%;
-    max-width: 400px; /* Taille maximale de l'image pour la carte */
-    height: auto;
-    border-radius: 5px; /* Forme rectangulaire ou carrée */
-    border: 3px solid var(--color-red); /* Bordure rouge vive d'accentuation */
-    object-fit: cover;
-    margin: 0 auto 1rem auto; /* Centre l'image et ajoute une marge en bas */
-    display: block;
-}
-
-.member-name {
-    color: var(--color-primary); /* Violet */
-    margin-bottom: 0.2rem;
-}
-
-.member-role {
-    font-family: var(--font-heading);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-secondary); /* Rouge */
-    text-transform: uppercase;
-    font-size: 0.9em;
-    margin-bottom: 1rem;
-}
-
-.team-disclaimer {
-    margin-top: 2rem;
-    font-size: 0.85rem;
-    color: #6c757d;
-    text-align: center;
-}
-
-
-/* ======================================================================
- * 9. GRILLE D'ACTIONS (Cartes Colorées)
+ * 8. GRILLE D'ACTIONS (Cartes Colorées)
  * ====================================================================== */
 
 .actions-grid {
@@ -348,7 +283,6 @@ section:nth-child(even) {
     text-align: center;
     background-size: cover;
     background-position: center;
-    /* Placeholder visuel basé sur le contenu */
 }
 
 /* Styles spécifiques pour les images d'action (Backgrounds) */
@@ -360,6 +294,66 @@ section:nth-child(even) {
 .card-content {
     padding: 1.5rem;
 }
+
+
+/* ======================================================================
+ * 9. SECTION ÉQUIPE/CHEFS DE FILE (NOUVELLE PRÉSENTATION - STYLE PRESSE)
+ * ====================================================================== */
+
+#equipe {
+    background-color: white; /* Couleur claire pour faire ressortir l'article */
+    padding: 4rem 0;
+}
+
+.team-announcement {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-top: 2rem;
+    /* Styles pour simuler un bloc article */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+}
+
+.announcement-text {
+    flex: 2; /* Donne plus de place au texte (2/3 de l'espace) */
+    min-width: 300px;
+}
+
+.announcement-photo {
+    flex: 1;
+    min-width: 200px; /* Minimum pour l'image (1/3 de l'espace) */
+    max-width: 350px; /* Limite la taille de l'image sur grand écran */
+    text-align: center;
+    border: 1px solid #000; /* Bordure simple style article de presse */
+    padding: 5px;
+    background-color: var(--color-background);
+}
+
+.member-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.leader-designation-title {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-secondary); /* Rouge vif pour le titre de l'article */
+    font-size: 1.2em;
+    margin-bottom: 0.5rem;
+}
+
+.source-info, .caption {
+    font-size: 0.85em;
+    color: #6c757d;
+    font-style: italic;
+    line-height: 1.3;
+}
+
 
 /* ======================================================================
  * 10. SECTION CONTACT (Formulaire/Infos)
@@ -429,16 +423,15 @@ footer {
     }
     
     /* --- AJUSTEMENT POUR LA NOUVELLE SECTION ÉQUIPE/CHEFS DE FILE --- */
-    .team-member {
-        /* Assure que l'image ne dépasse pas la largeur du contenu sur petit écran */
-        padding: 1rem 0.5rem; 
+    .team-announcement {
+        flex-direction: column; /* Empile l'image et le texte sur mobile */
+        align-items: center;
     }
-    .member-photo {
-        /* Limite la taille de l'image sur les très petits écrans */
-        max-width: 90%; 
+    .announcement-photo {
+        max-width: 100%; /* L'image prend toute la largeur sur mobile */
+        min-width: unset;
+        order: -1; /* Place la photo au-dessus du texte sur mobile */
     }
-
-    /* La grille d'actions reste en colonnes simples (défaut auto-fit) */
 }
 
 
@@ -477,5 +470,3 @@ footer {
         transform: translateY(0);
     }
 }
-
-

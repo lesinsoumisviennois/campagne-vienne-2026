@@ -235,7 +235,71 @@ section:nth-child(even) {
 }
 
 /* ======================================================================
- * 8. GRILLE D'ACTIONS (Cartes Colorées)
+ * 8. SECTION ÉQUIPE/CHEFS DE FILE
+ * ====================================================================== */
+
+#equipe {
+    background-color: #f0f0f5; /* Couleur de fond légèrement différente pour la séparation */
+    padding: 3rem 0;
+}
+
+.team-grid {
+    display: grid;
+    /* La grille sera en deux colonnes si l'espace le permet */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.team-member {
+    padding: 1.5rem;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-3px);
+}
+
+.member-photo {
+    /* L'image est maintenant rectangulaire ou carrée */
+    width: 100%;
+    max-width: 400px; /* Taille maximale de l'image pour la carte */
+    height: auto;
+    border-radius: 5px; /* Forme rectangulaire ou carrée */
+    border: 3px solid var(--color-red); /* Bordure rouge vive d'accentuation */
+    object-fit: cover;
+    margin: 0 auto 1rem auto; /* Centre l'image et ajoute une marge en bas */
+    display: block;
+}
+
+.member-name {
+    color: var(--color-primary); /* Violet */
+    margin-bottom: 0.2rem;
+}
+
+.member-role {
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-secondary); /* Rouge */
+    text-transform: uppercase;
+    font-size: 0.9em;
+    margin-bottom: 1rem;
+}
+
+.team-disclaimer {
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: #6c757d;
+    text-align: center;
+}
+
+
+/* ======================================================================
+ * 9. GRILLE D'ACTIONS (Cartes Colorées)
  * ====================================================================== */
 
 .actions-grid {
@@ -298,7 +362,7 @@ section:nth-child(even) {
 }
 
 /* ======================================================================
- * 9. SECTION CONTACT (Formulaire/Infos)
+ * 10. SECTION CONTACT (Formulaire/Infos)
  * ====================================================================== */
 
 #contact {
@@ -322,7 +386,7 @@ section:nth-child(even) {
 }
 
 /* ======================================================================
- * 10. FOOTER (Pied de Page)
+ * 11. FOOTER (Pied de Page)
  * ====================================================================== */
 
 footer {
@@ -334,7 +398,7 @@ footer {
 }
 
 /* ======================================================================
- * 11. MEDIA QUERIES (Responsive Design Mobile-First)
+ * 12. MEDIA QUERIES (Responsive Design Mobile-First et Tablettes)
  * ====================================================================== */
 
 /* Sur les petits écrans (smartphones) */
@@ -363,11 +427,44 @@ footer {
         width: 100%;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
+    
+    /* --- AJUSTEMENT POUR LA NOUVELLE SECTION ÉQUIPE/CHEFS DE FILE --- */
+    .team-member {
+        /* Assure que l'image ne dépasse pas la largeur du contenu sur petit écran */
+        padding: 1rem 0.5rem; 
+    }
+    .member-photo {
+        /* Limite la taille de l'image sur les très petits écrans */
+        max-width: 90%; 
+    }
+
     /* La grille d'actions reste en colonnes simples (défaut auto-fit) */
 }
 
+
+/* MEDIA QUERY : AJUSTEMENT TABLETTES (Entre 769px et 1024px) */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Diminution subtile des titres sur tablette */
+    h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    .slogan {
+        font-size: 1.6rem;
+    }
+    
+    /* La grille d'actions reste en 3 colonnes ici (par le CSS par défaut) mais on réduit l'espacement */
+    .actions-grid {
+        gap: 1.5rem;
+    }
+}
+
+
 /* ======================================================================
- * 12. ANIMATIONS CSS PURES
+ * 13. ANIMATIONS CSS PURES
  * ====================================================================== */
 
 @keyframes fadeInDown {

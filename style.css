@@ -418,10 +418,10 @@ section:nth-child(odd) {
     text-align: center;
 }
 
+/* L'iframe doit aussi prendre la largeur pour être visible */
 .embedded-player {
     width: 100%;
-    /* Assure une hauteur par défaut pour le lecteur HTML5 standard */
-    min-height: 40px; 
+    /* La hauteur de 150px est définie directement dans le HTML de l'iframe AzuraCast */
 }
 
 
@@ -527,4 +527,4 @@ footer {
         opacity: 1;
         transform: translateY(0);
     }
-} 
+}

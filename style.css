@@ -1,11 +1,11 @@
-/* Fond dynamique inspiré de hellemmesinsoumise.fr */
+/* Fond violet animé */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #ff0040, #ff6f61, #ffcc00, #ff66c4);
+  background: linear-gradient(135deg, #4b0082, #800080, #9932cc, #8a2be2);
   background-size: 400% 400%;
-  animation: gradientFlow 15s ease infinite;
+  animation: gradientFlow 20s ease infinite;
   color: #fff;
 }
 
@@ -52,9 +52,9 @@ form h2 {
   font-size: 1.5em;
 }
 
-form h2:nth-of-type(1) { color: #d60000; }
-form h2:nth-of-type(2) { color: #0066cc; }
-form h2:nth-of-type(3) { color: #009933; }
+form h2:nth-of-type(1) { color: #d60000; } /* rouge */
+form h2:nth-of-type(2) { color: #0066cc; } /* bleu */
+form h2:nth-of-type(3) { color: #009933; } /* vert */
 form h2:nth-of-type(4) { color: #d60000; }
 form h2:nth-of-type(5) { color: #009933; }
 form h2:nth-of-type(6) { color: #0066cc; }

@@ -1,26 +1,23 @@
-/* Couleurs de base */
-:root {
-  --rouge: #d60000;
-  --bleu: #0066cc;
-  --vert: #009933;
-  --fond: #f0fff0;
-  --texte: #333;
-}
-
-/* Corps de page */
+/* Fond dynamique inspiré de hellemmesinsoumise.fr */
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: var(--fond);
-  color: var(--texte);
   margin: 0;
   padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ff0040, #ff6f61, #ffcc00, #ff66c4);
+  background-size: 400% 400%;
+  animation: gradientFlow 15s ease infinite;
+  color: #fff;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* En-tête */
 header {
   text-align: center;
-  background-color: var(--rouge);
-  color: white;
   padding: 20px;
 }
 
@@ -28,30 +25,25 @@ header img {
   width: 100%;
   max-height: 300px;
   object-fit: cover;
-  border-bottom: 5px solid var(--rouge);
+  border-bottom: 5px solid #fff;
 }
 
 h1 {
   margin-top: 10px;
   font-size: 3em;
   font-weight: bold;
+  color: #fff;
 }
 
-/* Slogan */
-.slogan {
-  font-size: 1.2em;
-  margin-top: 10px;
-  color: var(--bleu);
-}
-
-/* Conteneur principal */
+/* Conteneur du formulaire */
 main.container {
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #333;
   padding: 30px;
   max-width: 800px;
-  margin: auto;
-  background-color: white;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  border-radius: 8px;
+  margin: 40px auto;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
 }
 
 /* Titres de sections */
@@ -60,15 +52,14 @@ form h2 {
   font-size: 1.5em;
 }
 
-/* Couleurs par section */
-form h2:nth-of-type(1) { color: var(--rouge); }
-form h2:nth-of-type(2) { color: var(--bleu); }
-form h2:nth-of-type(3) { color: var(--vert); }
-form h2:nth-of-type(4) { color: var(--rouge); }
-form h2:nth-of-type(5) { color: var(--vert); }
-form h2:nth-of-type(6) { color: var(--bleu); }
-form h2:nth-of-type(7) { color: var(--rouge); }
-form h2:nth-of-type(8) { color: var(--vert); }
+form h2:nth-of-type(1) { color: #d60000; }
+form h2:nth-of-type(2) { color: #0066cc; }
+form h2:nth-of-type(3) { color: #009933; }
+form h2:nth-of-type(4) { color: #d60000; }
+form h2:nth-of-type(5) { color: #009933; }
+form h2:nth-of-type(6) { color: #0066cc; }
+form h2:nth-of-type(7) { color: #d60000; }
+form h2:nth-of-type(8) { color: #009933; }
 
 /* Champs de formulaire */
 label {
@@ -95,7 +86,7 @@ input[type="checkbox"] {
 
 /* Bouton d'envoi */
 button[type="submit"] {
-  background-color: var(--rouge);
+  background-color: #d60000;
   color: white;
   border: none;
   padding: 12px 20px;

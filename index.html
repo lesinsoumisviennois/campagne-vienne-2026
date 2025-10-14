@@ -1,224 +1,84 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vienne POP - Vienne Populaire Ecologique et Solidaire</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Public+Sans:wght@700;900&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
-    
-    <link rel="icon" type="image/x-icon" href="images/logo.png">
-
-    <meta property="og:title" content="Vienne POP - Campagne 2026">
-    <meta property="og:description" content="Découvrez notre programme pour faire mieux à Vienne.">
-    <meta property="og:image" content="images/banniere.jpg">
+  <meta charset="UTF-8">
+  <title>Construisons Vienne ensemble</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <header>
+    <img src="assets/entete.jpg" alt="Vienne vue aérienne">
+    <h1>Construisons Vienne ensemble</h1>
+    <p>Partagez vos idées pour une ville plus juste, plus verte et plus vivante.</p>
+  </header>
 
-    <header class="header-fixed">
-        <div class="container navbar">
-            <a href="#hero" class="nav-logo">
-                <img src="images/logo.png" alt="Logo Vienne POP" onerror="this.style.display='none'">
-                Vienne POP
-            </a>
+  <main class="container">
+    <form action="https://formspree.io/f/xzzjybne" method="POST">
 
-            <nav class="nav-links">
-                <a href="#a-propos">À Propos</a>
-                <a href="#ressources">Outils</a>
-                <a href="#actions">Nos Actions</a>
-                <a href="#equipe">Notre Équipe</a> 
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
-    </header>
+      <!-- Section 1 : Qui êtes-vous -->
+      <h2>Qui êtes-vous ?</h2>
+      <label>Êtes-vous inscrit·e sur les listes électorales ?</label>
+      <input type="radio" name="electoral" value="Oui"> Oui
+      <input type="radio" name="electoral" value="Non"> Non
 
-    <main>
-        
-        <section id="hero">
-            <div class="hero-background"></div> 
-            
-            <div class="container hero-content">
-                <h1>Vienne POP</h1>
-                <p class="slogan">Vienne Populaire Ecologique et Solidaire</p>
-                <p>
-                    En 2026, donnons un nouvel élan à notre ville. Rejoignez le mouvement !
-                </p>
-            </div>
-        </section>
+      <label>Quel âge avez-vous ?</label>
+      <input type="text" name="age">
 
-        <section id="a-propos">
-            <div class="container">
-                <h2>À Propos de la Campagne</h2>
-                
-                <p>
-                   "Vienne POP n'est pas qu'une simple liste, c'est un mouvement citoyen enraciné dans les réalités des Viennois. Après des années de gestion passive, nous proposons un programme audacieux centré sur l'écologie sociale, la justice et la démocratie locale. Nous nous engageons à redonner le pouvoir d'agir à chaque habitant."
-                </p>
-                <p>
-                    Notre approche est basée sur l'écoute active et la participation citoyenne. Nous croyons que les solutions aux défis de Vienne se trouvent dans la force et la diversité de sa population. Ensemble, **Nous ferons mieux**.
-                </p>
-            </div>
-        </section>
-        
-        <section id="ressources">
-            <div class="container">
-                <h2>Boîte à Outils & Argumentaires</h2>
-                <p>Construisez votre argumentaire et adaptez le programme national aux enjeux locaux de Vienne.</p>
-                
-                <div class="ressources-grid">
-                    
-                    <article class="ressource-card">
-                        <div class="card-header card-header-progra">Boîte à outils programmatique</div>
-                        <div class="card-image-placeholder card-image-placeholder-progra"></div>
-                        <div class="card-content">
-                            <h3>Municipales 2026</h3>
-                            <p>
-                                Consultez la base de travail pour la construction du programme et adaptez les propositions nationales aux réalités de Vienne.
-                            </p>
-                            <a href="https://programme.lafranceinsoumise.fr/municipales-2026/" target="_blank" class="card-link-button">Accéder à la Boîte à Outils</a>
-                        </div>
-                    </article>
+      <label>Vous vous identifiez comme :</label>
+      <select name="genre">
+        <option value="Femme">Femme</option>
+        <option value="Homme">Homme</option>
+        <option value="Autre">Autre</option>
+        <option value="Ne pas répondre">Je préfère ne pas répondre</option>
+      </select>
 
-                    <article class="ressource-card">
-                        <div class="card-header card-header-argu">Kit Argumentaires Municipales</div>
-                        <div class="card-image-placeholder card-image-placeholder-argu"></div>
-                        <div class="card-content">
-                            <h3>Arguments Clés</h3>
-                            <p>
-                                Retrouvez l'ensemble des arguments clés et des fiches thématiques pour porter le projet "Vienne POP" sur le terrain et en débat.
-                            </p>
-                            <a href="https://lafranceinsoumise.fr/wp-content/uploads/2025/07/KIT-ARGU_VF.pdf" target="_blank" class="card-link-button">Télécharger le Kit Argumentaire (PDF)</a>
-                        </div>
-                    </article>
+      <label>Dans quelle rue habitez-vous ?</label>
+      <input type="text" name="rue">
 
-                </div>
-            </div>
-        </section>
+      <!-- Section 2 : Logement et solidarités -->
+      <h2>Logement et solidarités</h2>
+      <label>Vous êtes :</label>
+      <input type="radio" name="statut" value="Propriétaire"> Propriétaire
+      <input type="radio" name="statut" value="Locataire"> Locataire
 
+      <label>Comment décririez-vous votre logement ?</label>
+      <input type="checkbox" name="logement[]" value="En bon état"> En bon état
+      <input type="checkbox" name="logement[]" value="Insalubre"> Insalubre
+      <input type="checkbox" name="logement[]" value="Trop cher"> Trop cher
+      <input type="checkbox" name="logement[]" value="Abordable"> Abordable
 
-        <section id="actions">
-            <div class="container">
-                <h2>Nos Actions Concrètes</h2>
-                <p>La campagne se construit sur le terrain, au plus près des habitants. Voici nos trois piliers d'action immédiate :</p>
+      <label>Avez-vous déjà fait une demande de logement social ?</label>
+      <input type="radio" name="demande_logement" value="Oui"> Oui
+      <input type="radio" name="demande_logement" value="Non"> Non
 
-                <div class="actions-grid">
-                    
-                    <article class="action-card">
-                        <div class="card-header card-header-1">Porte à Porte</div>
-                        <div class="card-image-placeholder card-image-placeholder-1">
-                            </div>
-                        <div class="card-content">
-                            <h3>Rencontrer les Viennois</h3>
-                            <p>
-                                 Nous allons à votre rencontre dans chaque quartier de Vienne. Discutons de vos préoccupations quotidiennes et construisons notre programme ensemble, sur la base de vos réalités. Consultez le calendrier pour savoir quand nous serons près de chez vous.
-                            </p>
-                        </div>
-                    </article>
+      <label>Souhaitez-vous que la mairie réquisitionne les logements vides ?</label>
+      <input type="radio" name="requisition" value="Oui"> Oui
+      <input type="radio" name="requisition" value="Non"> Non
+      <input type="radio" name="requisition" value="Sans avis"> Sans avis
 
-                    <article class="action-card">
-                        <div class="card-header card-header-2">Listes Électorales</div>
-                        <div class="card-image-placeholder card-image-placeholder-2">
-                             </div>
-                        <div class="card-content">
-                            <h3>Le Pouvoir de Voter</h3>
-                            <p>
-                                Pour que votre voix compte en 2026, l'inscription sur les listes électorales est cruciale. Nous organisons des permanences pour vous aider dans cette démarche administrative. Votre vote est notre force.
-                            </p>
-                        </div>
-                    </article>
+      <label>Souhaitez-vous que la mairie s’oppose aux expulsions sans solution de relogement ?</label>
+      <input type="radio" name="expulsions" value="Oui"> Oui
+      <input type="radio" name="expulsions" value="Non"> Non
+      <input type="radio" name="expulsions" value="Ne se prononce pas"> Ne se prononce pas
 
-                    <article class="action-card">
-                        <div class="card-header card-header-3">Réunions du Groupe</div>
-                        <div class="card-image-placeholder card-image-placeholder-3">
-                             </div>
-                        <div class="card-content">
-                            <h3>Débattre et Construire</h3>
-                            <p>
-                                Participez à nos réunions publiques hebdomadaires ! C'est l'occasion de débattre des propositions, de rencontrer nos candidats et de devenir un acteur clé de la campagne. Un espace transparent et ouvert à tous.
-                            </p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
+      <!-- Section 3 à 7 : Culture, Commerces, Écologie, Transports, Démocratie -->
+      <!-- (Je te les envoie juste après pour garder ça lisible) -->
 
-        <section id="equipe">
-            <div class="container">
-                <h2>Désignation des Chefs de File</h2>
-                
-                <div class="team-announcement">
-                    
-                    <div class="announcement-text">
-                        <p class="leader-designation-title">Vienne Municipales 2026 : Vienne POP avance et veut constituer une liste commune de gauche</p>
-                        <p>
-                            Le mouvement a désigné ses deux chefs de file pour animer un collectif pour les élections municipales de 2026. Il s’agit de <strong>Myriam Thieulent</strong> et de <strong>Mourad Benaïad</strong>.
-                        </p>
-                        <p class="source-info">
-                            Le Dauphiné Libéré - 08 juil. 2025 à 21:59 | mis à jour le 08 juil. 2025 à 22:00 - Temps de lecture : 1 min
-                        </p>
-                    </div>
-                    
-                    <div class="announcement-photo">
-                        <img src="images/equipe.jpg" alt="Mourad Benaïad et Myriam Thieulent, chefs de file LFI pour les municipales." class="member-photo">
-                        <p class="caption">Mourad Benaïad et Myriam Thieulent sont les chefs de file Vienne POP pour les municipales. Photo LFI</p>
-                    </div>
+      <!-- Section finale -->
+      <h2>Allons plus loin</h2>
+      <label>Quelles problématiques importantes n’ont pas été évoquées ?</label>
+      <textarea name="commentaires" rows="5"></textarea>
 
-                </div>
-                
-                <div class="leader-bios-grid">
-                    
-                    <div class="leader-bio-card">
-                        <h3 class="member-name">Myriam Thieulent</h3>
-                        <p class="member-role">Co-cheffe de file Vienne POP</p>
-                        <p class="member-bio">
-                            Militante de longue date et spécialiste des questions sociales et environnementales. Myriam Thieulent porte la vision d'une ville plus juste et plus verte pour Vienne. Son engagement est au service des quartiers populaires.
-                        </p>
-                    </div>
-                    
-                    <div class="leader-bio-card">
-                        <h3 class="member-name">Mourad Benaïad</h3>
-                        <p class="member-role">Co-chef de file Vienne POP</p>
-                        <p class="member-bio">
-                            Acteur du tissu associatif viennois, Mourad Benaïad met son expertise en démocratie participative et en développement local au service de la campagne. Il est le garant de l'unité et de l'ouverture du collectif.
-                        </p>
-                    </div>
-                    
-                </div>
-                
-            </div>
-        </section>
+      <label>Souhaitez-vous être recontacté·e ?</label>
+      <input type="radio" name="contact_ok" value="Oui"> Oui
+      <input type="radio" name="contact_ok" value="Non"> Non
 
-        <section id="contact">
-            <div class="container">
-                <h2>Rejoignez-nous et Agissez !</h2>
-                
-                <p>
-                    Contactez-nous pour toute question, suggestion ou pour devenir bénévole.
-                </p>
+      <label>Votre contact (email ou téléphone) :</label>
+      <input type="text" name="contact">
 
-                <div class="contact-info">
-                    <p>
-                        📧 Email: <a href="mailto:contact@vienne-linsoumise.fr">contact@vienne-linsoumise.fr</a>
-                    </p>
-                    <p>
-                        📍 Adresse du local de campagne: **[À DÉFINIR]**
-                    </p>
-                    <p>
-                        📱 Téléphone Bénévole: **[À DÉFINIR]**
-                    </p>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Vienne POP - Campagne Municipale 2026. | Développé avec passion par Mourad.B </p>
-        </div>
-    </footer>
-
+      <button type="submit">Envoyer</button>
+    </form>
+  </main>
 </body>
 </html>
+

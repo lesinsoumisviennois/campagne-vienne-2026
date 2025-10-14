@@ -2,30 +2,28 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <img src="assets/entete.jpg" alt="Vienne vue aérienne">
   <title>Construisons Vienne ensemble</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <img src="assets/entete.jpg" alt="Vienne vue aérienne">
+    <img src="assets/entete.jpg" alt="Vue aérienne de Vienne">
     <h1>Construisons Vienne ensemble</h1>
-    <p>Partagez vos idées pour une ville plus juste, plus verte et plus vivante.</p>
+    <p class="slogan">💬 <strong>Partagez vos idées pour une ville plus juste, plus verte et plus vivante</strong></p>
   </header>
 
   <main class="container">
     <form action="https://formspree.io/f/xzzjybne" method="POST">
 
-      <!-- Section 1 : Qui êtes-vous -->
-      <h2>Qui êtes-vous ?</h2>
-      <label>Êtes-vous inscrit·e sur les listes électorales ?</label>
+      <h2>1. Qui êtes-vous ?</h2>
+      <label>1.1 Êtes-vous inscrit·e sur les listes électorales ?</label><br>
       <input type="radio" name="electoral" value="Oui"> Oui
       <input type="radio" name="electoral" value="Non"> Non
 
-      <label>Quel âge avez-vous ?</label>
+      <label>1.2 Quel âge avez-vous ?</label>
       <input type="text" name="age">
 
-      <label>Vous vous identifiez comme :</label>
+      <label>1.3 Vous vous identifiez comme :</label>
       <select name="genre">
         <option value="Femme">Femme</option>
         <option value="Homme">Homme</option>
@@ -33,48 +31,137 @@
         <option value="Ne pas répondre">Je préfère ne pas répondre</option>
       </select>
 
-      <label>Dans quelle rue habitez-vous ?</label>
+      <label>1.4 Dans quelle rue habitez-vous ?</label>
       <input type="text" name="rue">
 
-      <!-- Section 2 : Logement et solidarités -->
-      <h2>Logement et solidarités</h2>
-      <label>Vous êtes :</label>
+      <h2>2. Logement et solidarités</h2>
+      <label>2.1 Vous êtes :</label><br>
       <input type="radio" name="statut" value="Propriétaire"> Propriétaire
       <input type="radio" name="statut" value="Locataire"> Locataire
 
-      <label>Comment décririez-vous votre logement ?</label>
+      <label>2.2 Comment décririez-vous votre logement ?</label><br>
       <input type="checkbox" name="logement[]" value="En bon état"> En bon état
       <input type="checkbox" name="logement[]" value="Insalubre"> Insalubre
       <input type="checkbox" name="logement[]" value="Trop cher"> Trop cher
       <input type="checkbox" name="logement[]" value="Abordable"> Abordable
 
-      <label>Avez-vous déjà fait une demande de logement social ?</label>
+      <label>2.3 Avez-vous déjà fait une demande de logement social ?</label><br>
       <input type="radio" name="demande_logement" value="Oui"> Oui
       <input type="radio" name="demande_logement" value="Non"> Non
 
-      <label>Souhaitez-vous que la mairie réquisitionne les logements vides ?</label>
+      <label>2.4 Souhaitez-vous que la mairie réquisitionne les logements vides ?</label><br>
       <input type="radio" name="requisition" value="Oui"> Oui
       <input type="radio" name="requisition" value="Non"> Non
       <input type="radio" name="requisition" value="Sans avis"> Sans avis
 
-      <label>Souhaitez-vous que la mairie s’oppose aux expulsions sans solution de relogement ?</label>
+      <label>2.5 Souhaitez-vous que la mairie s’oppose aux expulsions sans solution de relogement ?</label><br>
       <input type="radio" name="expulsions" value="Oui"> Oui
       <input type="radio" name="expulsions" value="Non"> Non
       <input type="radio" name="expulsions" value="Ne se prononce pas"> Ne se prononce pas
 
-      <!-- Section 3 à 7 : Culture, Commerces, Écologie, Transports, Démocratie -->
-      <!-- (Je te les envoie juste après pour garder ça lisible) -->
+      <h2>3. Culture</h2>
+      <label>3.1 Fréquentez-vous les lieux culturels de Vienne ?</label><br>
+      <input type="radio" name="culture_freq" value="Souvent"> Souvent
+      <input type="radio" name="culture_freq" value="De temps en temps"> De temps en temps
+      <input type="radio" name="culture_freq" value="Rarement"> Rarement
+      <input type="radio" name="culture_freq" value="Jamais"> Jamais
 
-      <!-- Section finale -->
-      <h2>Allons plus loin</h2>
-      <label>Quelles problématiques importantes n’ont pas été évoquées ?</label>
+      <label>3.2 Êtes-vous satisfait·e de l’offre culturelle actuelle ?</label><br>
+      <input type="radio" name="culture_satisfaction" value="Oui"> Oui
+      <input type="radio" name="culture_satisfaction" value="Non"> Non
+
+      <label>3.3 Et pour les enfants et les jeunes ?</label><br>
+      <input type="radio" name="culture_jeunes" value="Oui"> Oui
+      <input type="radio" name="culture_jeunes" value="Pas assez variée"> Un peu, mais pas assez variée
+      <input type="radio" name="culture_jeunes" value="Non"> Non, il en manque clairement
+      <input type="radio" name="culture_jeunes" value="Pas concerné·e"> Je ne sais pas / pas concerné·e
+
+      <h2>4. Commerces et services</h2>
+      <label>4.1 Où faites-vous vos courses du quotidien ?</label><br>
+      <input type="radio" name="courses" value="Quartier"> Dans votre quartier
+      <input type="radio" name="courses" value="Centre-ville"> En centre-ville
+      <input type="radio" name="courses" value="Ailleurs"> Ailleurs
+
+      <label>4.2 Quels commerces vous manquent dans votre quartier ?</label><br>
+      <input type="checkbox" name="manque_commerces[]" value="Alimentation"> Alimentation de proximité
+      <input type="checkbox" name="manque_commerces[]" value="Épiceries"> Épiceries spécialisées
+      <input type="checkbox" name="manque_commerces[]" value="Prêt-à-porter"> Prêt-à-porter
+      <input type="checkbox" name="manque_commerces[]" value="Maison"> Maison et loisirs
+      <input type="checkbox" name="manque_commerces[]" value="Services"> Services pratiques
+      <input type="checkbox" name="manque_commerces[]" value="Lieux conviviaux"> Lieux conviviaux
+      <input type="checkbox" name="manque_commerces[]" value="Autre"> Autre
+
+      <h2>5. Vienne plus verte</h2>
+      <label>5.1 Êtes-vous satisfait·e des espaces verts ?</label><br>
+      <input type="radio" name="espaces_verts" value="Oui"> Oui
+      <input type="radio" name="espaces_verts" value="Non"> Non
+      <input type="radio" name="espaces_verts" value="Ne sait pas"> Ne sait pas
+
+      <label>5.2 Quels espaces verts fréquentez-vous ?</label><br>
+      <input type="checkbox" name="espaces_frequentes[]" value="Quartier"> Ceux de votre quartier
+      <input type="checkbox" name="espaces_frequentes[]" value="Jardin de ville"> Jardin de ville
+      <input type="checkbox" name="espaces_frequentes[]" value="Cybèle"> Jardin de Cybèle
+      <input type="checkbox" name="espaces_frequentes[]" value="Nature"> Espaces naturels hors de la ville
+
+      <label>5.3 Faut-il réduire la place de la voiture dans les quartiers résidentiels ?</label><br>
+      <input type="radio" name="voiture" value="Oui"> Oui
+      <input type="radio" name="voiture" value="Non"> Non
+      <input type="radio" name="voiture" value="Oui si alternatives"> Oui, si des alternatives existent
+
+      <label>5.4 Y a-t-il assez d’espaces sécurisés pour les vélos dans votre quartier ?</label><br>
+      <input type="radio" name="velos" value="Oui"> Oui
+      <input type="radio" name="velos" value="Non"> Non
+      <input type="radio" name="velos" value="Pas concerné·e"> Pas concerné·e
+
+      <label>5.5 Pour les futurs projets d’urbanisme, vous souhaiteriez :</label><br>
+      <input type="checkbox" name="urbanisme[]" value="Logements sociaux"> Des logements sociaux
+      <input type="checkbox" name="urbanisme[]" value="Espaces verts"> Des espaces verts
+      <input type="checkbox" name="urbanisme[]" value="Services publics"> Des services publics
+      <input type="checkbox" name="urbanisme[]" value="Autre"> Autre
+
+      <h2>6. Transports et mobilités</h2>
+      <label>6.1 Utilisez-vous les transports en commun à Vienne ?</label><br>
+      <input type="radio" name="transports_communs" value="Oui"> Oui
+      <input type="radio" name="transports_communs" value="Non"> Non
+            <input type="radio" name="transports_communs" value="Parfois"> Parfois
+
+      <label>6.2 Que faudrait-il améliorer selon vous ?</label><br>
+      <input type="checkbox" name="transports_ameliorations[]" value="Fréquence"> Fréquence
+      <input type="checkbox" name="transports_ameliorations[]" value="Accessibilité"> Accessibilité
+      <input type="checkbox" name="transports_ameliorations[]" value="Tarifs"> Tarifs
+      <input type="checkbox" name="transports_ameliorations[]" value="Propreté"> Propreté
+      <input type="checkbox" name="transports_ameliorations[]" value="Autre"> Autre
+
+      <label>6.3 Utilisez-vous un vélo ou une trottinette ?</label><br>
+      <input type="radio" name="mobilite_douce" value="Oui"> Oui
+      <input type="radio" name="mobilite_douce" value="Non"> Non
+      <input type="radio" name="mobilite_douce" value="Parfois"> Parfois
+
+      <h2>7. Démocratie locale</h2>
+      <label>7.1 Participez-vous à la vie citoyenne locale ?</label><br>
+      <input type="radio" name="vie_locale" value="Oui"> Oui
+      <input type="radio" name="vie_locale" value="Non"> Non
+      <input type="radio" name="vie_locale" value="Parfois"> Parfois
+
+      <label>7.2 Souhaitez-vous plus de consultations citoyennes ?</label><br>
+      <input type="radio" name="consultations" value="Oui"> Oui
+      <input type="radio" name="consultations" value="Non"> Non
+      <input type="radio" name="consultations" value="Sans avis"> Sans avis
+
+      <label>7.3 Seriez-vous prêt·e à participer à des ateliers ou réunions publiques ?</label><br>
+      <input type="radio" name="ateliers" value="Oui"> Oui
+      <input type="radio" name="ateliers" value="Non"> Non
+      <input type="radio" name="ateliers" value="Peut-être"> Peut-être
+
+      <h2>8. Allons plus loin</h2>
+      <label>8.1 Quelles problématiques importantes n’ont pas été évoquées ?</label>
       <textarea name="commentaires" rows="5"></textarea>
 
-      <label>Souhaitez-vous être recontacté·e ?</label>
+      <label>8.2 Souhaitez-vous être recontacté·e ?</label><br>
       <input type="radio" name="contact_ok" value="Oui"> Oui
       <input type="radio" name="contact_ok" value="Non"> Non
 
-      <label>Votre contact (email ou téléphone) :</label>
+      <label>8.3 Votre contact (email ou téléphone) :</label>
       <input type="text" name="contact">
 
       <button type="submit">Envoyer</button>
@@ -82,4 +169,3 @@
   </main>
 </body>
 </html>
-
